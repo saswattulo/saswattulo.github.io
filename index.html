@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saswat Tulo</title>
+<meta name="description" content="Hi, I'm Saswat. I build things with machine learning and LLMs.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%B0%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page: #f3f3ee;
+    --card: #ffffff;
+    --ink: #111111;
+    --muted: #5f6670;
+    --accent: #ffcc00;
+    --logo-ink: #1a1aff;
+    --line: #111111;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --page: #15161a; --card: #1e1f24; --ink: #ecebe6; --muted: #a3a8b0;
+      --accent: #ffcc00; --logo-ink: #1a1aff; --line: #ecebe6;
+    }
+  }
+  :root[data-theme="dark"] {
+    --page: #15161a; --card: #1e1f24; --ink: #ecebe6; --muted: #a3a8b0;
+    --accent: #ffcc00; --logo-ink: #1a1aff; --line: #ecebe6;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: "Space Mono", Consolas, Menlo, monospace;
+    font-size: 15px;
+    line-height: 1.75;
+    letter-spacing: .02em;
+  }
+
+  .card {
+    max-width: 960px;
+    margin: 40px auto;
+    background: var(--card);
+    border: 3px solid var(--line);
+    box-shadow: 12px 12px 0 var(--line);
+    padding: 64px 70px 48px;
+  }
+
+  /* logo badge */
+  .logo {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--logo-ink);
+    border: 3px solid #111;
+    box-shadow: 6px 6px 0 #111;
+    padding: 8px 22px 6px;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transform: rotate(-2deg);
+    transition: transform .15s ease;
+  }
+  .logo:hover { transform: rotate(0deg); }
+
+  /* nav */
+  nav ul {
+    list-style: none; margin: 72px 0 0; padding: 0 6px;
+    display: flex; flex-wrap: wrap; gap: 18px 20px;
+  }
+  nav a {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 2px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
+    box-shadow: 4px 4px 0 rgba(0,0,0,.15);
+    font-size: 13px; font-weight: 700;
+    text-transform: uppercase; text-decoration: none;
+    transition: transform .1s ease, box-shadow .1s ease, background .1s ease;
+  }
+  nav a:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 rgba(0,0,0,.2); }
+  nav a[aria-current="page"] { background: var(--accent); color: #111; border-color: #111; }
+
+  hr.dash {
+    border: 0; border-top: 3px dashed var(--line);
+    margin: 44px 0 40px;
+  }
+
+  main a {
+    color: inherit; font-weight: 700; text-decoration: none;
+    border-bottom: 3px solid var(--accent);
+  }
+  main a:hover { background: var(--accent); color: #111; }
+
+  h2 { font-size: 17px; text-transform: uppercase; margin: 44px 0 14px; letter-spacing: .03em; }
+  h2:first-child { margin-top: 0; }
+  p { margin: 0 0 18px; }
+  ul.list { padding-left: 22px; margin: 0 0 18px; }
+  ul.list li { margin-bottom: 12px; }
+  .muted { color: var(--muted); }
+
+  section[hidden] { display: none; }
+
+  /* projects */
+  .projects { display: grid; gap: 22px; margin-top: 8px; }
+  .project {
+    border: 2px solid var(--line);
+    box-shadow: 5px 5px 0 rgba(0,0,0,.15);
+    padding: 16px 20px;
+  }
+  .project h3 { margin: 0 0 4px; font-size: 15px; }
+  .project p { margin: 0 0 8px; }
+  .tag {
+    display: inline-block; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; border: 1.5px solid var(--line);
+    padding: 0 7px; margin-right: 6px; color: var(--muted);
+  }
+
+  /* blog list */
+  .posts { list-style: none; padding: 0; margin: 0; }
+  .posts li { display: flex; gap: 18px; margin-bottom: 10px; }
+  .posts time { color: var(--muted); flex: none; min-width: 7.5em; }
+
+  footer {
+    margin-top: 48px; padding-top: 24px;
+    border-top: 3px dashed var(--line);
+    font-size: 14px;
+  }
+
+  @media (max-width: 720px) {
+    body { font-size: 14px; }
+    .card { margin: 16px 16px 28px; padding: 32px 20px 28px; box-shadow: 7px 7px 0 var(--line); }
+    .logo { font-size: 24px; }
+    nav ul { margin-top: 40px; gap: 12px; padding: 0; }
+    nav a { padding: 7px 11px; font-size: 12px; }
+    hr.dash { margin: 32px 0 28px; }
+    .posts li { flex-direction: column; gap: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <header>
+    <a class="logo" href="#home">Saswat.</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#now">Now</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <hr class="dash">
+
+  <main>
+    <!-- ================= HOME ================= -->
+    <section id="page-home">
+      <p>Hi, I'm Saswat.</p>
+      <p>
+        I build things with machine learning and large language models: memory layers for AI agents,
+        voice agents, and small tools that make everyday work a little less painful. Most of what I know,
+        I learned by building it and pushing it to
+        <a href="https://github.com/saswattulo" target="_blank" rel="noopener">GitHub</a>,
+        which is still the best place to see what I'm up to.
+      </p>
+
+      <h2>theme:</h2>
+      <p>
+        I started out working through the maths: Stanford's CS229 problem sets, neural networks written
+        from scratch, RNNs and transfer learning in notebooks. Then I kept going one layer up: data pipelines,
+        backends, full-stack apps, and lately agents that remember things, talk in Hinglish, and call tools.
+        Every one of those taught me something I'd like to keep. This website is where I'm writing it down,
+        so that a few years from now I can open it and remember how things actually work.
+      </p>
+      <p class="muted">(November 2026)</p>
+
+      <h2>few facts about me:</h2>
+      <ul class="list">
+        <li>I like rebuilding things from scratch to understand them: ML algorithms, a memory layer, even a rock-paper-scissors bot that learns how you play.</li>
+        <li>I'm currently obsessed with how AI agents should <em>remember</em>. Better memory beats a bigger context window.</li>
+        <li>Always happy to talk about LLMs, agents, data engineering, or a half-baked idea you can't stop thinking about. <a href="#contact">Say hi</a>.</li>
+      </ul>
+
+      <h2>reach out:</h2>
+      <ul class="list">
+        <li><a href="https://github.com/saswattulo" target="_blank" rel="noopener">saswattulo</a> on GitHub</li>
+        <li><a href="https://twitter.com/TuloSaswat" target="_blank" rel="noopener">TuloSaswat</a> on Twitter / X</li>
+        <li><a href="mailto:tulosaswat@gmail.com">tulosaswat@gmail.com</a></li>
+      </ul>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="page-projects" hidden>
+      <h2>projects:</h2>
+      <p>Things I've built, roughly newest first. Everything is on <a href="https://github.com/saswattulo" target="_blank" rel="noopener">GitHub</a>.</p>
+      <div class="projects">
+        <div class="project">
+          <h3><a href="https://github.com/saswattulo/NoMem" target="_blank" rel="noopener">NoMem</a></h3>
+          <p>Not Only Memory: a transparent, token-budgeted memory layer for agentic and RAG apps. Framework-neutral, local-first (SQLite), and no LLM or API key required.</p>
+          <span class="tag">Python</span><span class="tag">Agents</span><span class="tag">RAG</span>
+        </div>
+        <div class="project">
+          <h3><a href="https://github.com/saswattulo/hinglish-voice-agent" target="_blank" rel="noopener">Hinglish Voice Agent</a></h3>
+          <p>A voice agent that talks in Hinglish.</p>
+          <span class="tag">Python</span><span class="tag">Voice</span>
+        </div>
+        <div class="project">
+          <h3><a href="https://github.com/saswattulo/agentstack" target="_blank" rel="noopener">AgentStack</a></h3>
+          <p>Experiments in building and composing AI agents.</p>
+          <span class="tag">Python</span><span class="tag">Agents</span>
+        </div>
+        <div class="project">
+          <h3><a href="https://github.com/saswattulo/RPS" target="_blank" rel="noopener">RPS</a></h3>
+          <p>Rock Paper Scissors against a Q-learning AI that adapts to each player.</p>
+          <span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">MongoDB</span><span class="tag">RL</span>
+        </div>
+        <div class="project">
+          <h3>Gratify <span class="muted">(private)</span></h3>
+          <p>An app across Flutter mobile, a TypeScript web client, and a Python backend.</p>
+          <span class="tag">Dart</span><span class="tag">TypeScript</span><span class="tag">Python</span>
+        </div>
+        <div class="project">
+          <h3><a href="https://github.com/saswattulo/resume-revoke" target="_blank" rel="noopener">Resume Revoke</a></h3>
+          <p>Streamlit prototype that tailors a resume to a job description and renders it with a LaTeX template, producing both .tex and PDF.</p>
+          <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">LLM</span>
+        </div>
+        <div class="project">
+          <h3><a href="https://github.com/saswattulo/SecurePIX" target="_blank" rel="noopener">SecurePIX</a></h3>
+          <p>Image encryption and decryption through scrambling and color-shifting, with the decryption key embedded in the image metadata for safe sharing.</p>
+          <span class="tag">Python</span><span class="tag">Streamlit</span>
+        </div>
+        <div class="project">
+          <h3><a href="https://github.com/saswattulo/NyayMitra_V2.0" target="_blank" rel="noopener">NyayMitra</a></h3>
+          <p>An assistant that helps people get legal help and information in a user-friendly way.</p>
+          <span class="tag">Python</span><span class="tag">LLM</span>
+        </div>
+        <div class="project">
+          <h3><a href="https://github.com/saswattulo/CS229-Solutions" target="_blank" rel="noopener">CS229 Solutions</a></h3>
+          <p>Detailed solutions to the assignments of Stanford's CS229 (Machine Learning) course.</p>
+          <span class="tag">Jupyter</span><span class="tag">ML</span>
+        </div>
+        <div class="project">
+          <h3><a href="https://github.com/saswattulo/Geometric-Brownian-Motion-simulation-for-BTC-USD" target="_blank" rel="noopener">GBM for BTC-USD</a></h3>
+          <p>Geometric Brownian Motion simulation of BTC-USD prices using yfinance data.</p>
+          <span class="tag">Jupyter</span><span class="tag">Finance</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BLOG ================= -->
+    <section id="page-blog" hidden>
+      <h2>blog:</h2>
+      <p>Notes for my future self. The first one is on its way.</p>
+      <ul class="posts">
+        <!-- Add posts like this:
+        <li><time datetime="2026-11-02">02 Nov 2026</time><a href="posts/my-first-post.html">My first post</a></li>
+        -->
+        <li><time class="muted">soon</time><span class="muted">Why agents need memory and not just bigger context windows</span></li>
+      </ul>
+    </section>
+
+    <!-- ================= NOW ================= -->
+    <section id="page-now" hidden>
+      <h2>now:</h2>
+      <p>What I'm spending my time on these days:</p>
+      <ul class="list">
+        <li>Building memory for AI agents: <a href="https://github.com/saswattulo/NoMem" target="_blank" rel="noopener">NoMem</a>, and digging into how <a href="https://github.com/mem0ai/mem0" target="_blank" rel="noopener">mem0</a> does it.</li>
+        <li>Voice agents that handle code-switched Hinglish.</li>
+        <li>Looking for my next role in AI / ML engineering. If you're hiring, <a href="#contact">let me know</a>.</li>
+      </ul>
+      <p class="muted">(Last updated November 2026)</p>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="page-contact" hidden>
+      <h2>reach out:</h2>
+      <p>The fastest way to reach me is email. I read everything.</p>
+      <ul class="list">
+        <li><a href="mailto:tulosaswat@gmail.com">tulosaswat@gmail.com</a></li>
+        <li><a href="https://github.com/saswattulo" target="_blank" rel="noopener">saswattulo</a> on GitHub</li>
+        <li><a href="https://twitter.com/TuloSaswat" target="_blank" rel="noopener">TuloSaswat</a> on Twitter / X</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>Thanks for stopping by! ( ˘ ▽ ˘ )っ</footer>
+</div>
+
+<script>
+  (function () {
+    var ids = ["home", "projects", "blog", "now", "contact"];
+    function show() {
+      var id = (location.hash || "#home").slice(1);
+      if (ids.indexOf(id) === -1) id = "home";
+      ids.forEach(function (s) {
+        document.getElementById("page-" + s).hidden = s !== id;
+      });
+      document.querySelectorAll("nav a").forEach(function (a) {
+        if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current", "page");
+        else a.removeAttribute("aria-current");
+      });
+      window.scrollTo(0, 0);
+    }
+    window.addEventListener("hashchange", show);
+    show();
+  })();
+</script>
+</body>
+</html>
