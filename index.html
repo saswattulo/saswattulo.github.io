@@ -125,7 +125,8 @@
 
   /* blog list */
   .posts { list-style: none; padding: 0; margin: 0; }
-  .posts li { display: flex; gap: 18px; margin-bottom: 10px; }
+  .posts li { display: flex; gap: 18px; margin-bottom: 18px; }
+  .posts .tag { margin-top: 6px; }
   .posts time { color: var(--muted); flex: none; min-width: 7.5em; }
 
   footer {
@@ -260,13 +261,19 @@
     <!-- ================= BLOG ================= -->
     <section id="page-blog" hidden>
       <h2>blog:</h2>
-      <p>Notes for my future self. The first one is on its way.</p>
+      <p>Notes for my future self, written as I learn. They live on my <a href="https://learning-graph-saswat.vercel.app/u/saswat" target="_blank" rel="noopener">learning graph</a>, which also maps every concept I've picked up along the way.</p>
       <ul class="posts">
-        <!-- Add posts like this:
-        <li><time datetime="2026-11-02">02 Nov 2026</time><a href="posts/my-first-post.html">My first post</a></li>
-        -->
-        <li><time class="muted">soon</time><span class="muted">Why agents need memory and not just bigger context windows</span></li>
+        <li><time datetime="2026-10-25">25 Oct 2026</time><div><a href="https://learning-graph-saswat.vercel.app/u/saswat/s/ed3bcffc-e13f-473c-b744-6095e1f29a97" target="_blank" rel="noopener">LLM-based audio models: neural codecs, audio tokens, and speech-to-speech</a><br><span class="tag">LLMs</span></div></li>
+        <li><time datetime="2026-10-25">25 Oct 2026</time><div><a href="https://learning-graph-saswat.vercel.app/u/saswat/s/3f73a8ec-9a15-44f3-9d1c-d0129223570c" target="_blank" rel="noopener">Forecasting semantic change in words using diachronic embeddings</a><br><span class="tag">Computational linguistics</span></div></li>
+        <li><time datetime="2026-10-21">21 Oct 2026</time><div><a href="https://learning-graph-saswat.vercel.app/u/saswat/s/5203527a-175d-4576-9808-880410529c7b" target="_blank" rel="noopener">Designing an RSVP-style mobile PDF reader: reading science, product scope, tech stack, and backend needs</a><br><span class="tag">Mobile app architecture</span></div></li>
+        <li><time datetime="2026-10-21">21 Oct 2026</time><div><a href="https://learning-graph-saswat.vercel.app/u/saswat/s/beead5d7-bf48-4203-bdce-a338650b64e5" target="_blank" rel="noopener">Entropy, cross-entropy, KL divergence and perplexity</a><br><span class="tag">Information theory</span></div></li>
+        <li><time datetime="2026-10-21">21 Oct 2026</time><div><a href="https://learning-graph-saswat.vercel.app/u/saswat/s/d2d0532b-67f3-4565-9258-db54273dba0b" target="_blank" rel="noopener">Cycle Stock in Supply Chain</a><br><span class="tag">Supply chain management</span></div></li>
+        <li><time datetime="2026-10-21">21 Oct 2026</time><div><a href="https://learning-graph-saswat.vercel.app/u/saswat/s/af87e028-36bb-467e-9bc8-a90616da9809" target="_blank" rel="noopener">Python threading, multiprocessing and asyncio via a 20-URL web scraper</a><br><span class="tag">Python concurrency</span></div></li>
+        <li><time datetime="2026-10-20">20 Oct 2026</time><div><a href="https://learning-graph-saswat.vercel.app/u/saswat/s/d3c0888d-c06f-40d9-8b18-1a95ad960352" target="_blank" rel="noopener">Structure and money flows of the Indian Railways ecosystem</a><br><span class="tag">Indian Railways economics</span></div></li>
+        <li><time datetime="2026-10-20">20 Oct 2026</time><div><a href="https://learning-graph-saswat.vercel.app/u/saswat/s/05caf929-0fa3-4651-b25f-06996b03727a" target="_blank" rel="noopener">How parameters are represented in FP4 / NVFP4 and where it is used</a><br><span class="tag">LLMs</span></div></li>
+        <li><time datetime="2026-10-20">20 Oct 2026</time><div><a href="https://learning-graph-saswat.vercel.app/u/saswat/s/30914c92-15a7-4c74-ac7c-01b6a6d56420" target="_blank" rel="noopener">Simulating LLMs to load-test agentic and voice systems</a><br><span class="tag">LLMs</span></div></li>
       </ul>
+      <p style="margin-top:24px"><a href="https://learning-graph-saswat.vercel.app/u/saswat/activity" target="_blank" rel="noopener">All posts &rarr;</a></p>
     </section>
 
     <!-- ================= NOW ================= -->
